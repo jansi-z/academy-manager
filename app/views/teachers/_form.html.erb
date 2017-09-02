@@ -1,5 +1,11 @@
 <%= form_for @teacher do |f| %>
 
+  <ul>
+    <% @teacher.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>    
+  </ul>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
 
