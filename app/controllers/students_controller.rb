@@ -18,7 +18,13 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
 
+    puts @student.teacher.stress_level
+
+
     if @student.save
+      @student.teacher.stress_level += @student.stress_factor
+      @student.teacher.save
+
       redirect_to @student
     else
       render "new"
@@ -32,7 +38,13 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
 
+    @student.teacher.stress_level -= @student.stress_factor
+    @student.teacher.save
+
     if @student.update_attributes(student_params)
+      @student.teacher.stress_level += @student.stress_factor
+      @student.teacher.save
+
       redirect_to @student
     else
       render "edit"
@@ -42,7 +54,12 @@ class StudentsController < ApplicationController
   def destroy
     @student = Student.find(params[:id])
 
+    @student.teacher.stress_level -= @student.stress_factor
+    @student.teacher.save
+
     @student.destroy
+
+
 
     redirect_to students_path
   end
