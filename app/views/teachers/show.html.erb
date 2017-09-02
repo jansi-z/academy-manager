@@ -5,3 +5,5 @@
 <%= image_tag @teacher.image_url %>
 
 <p><%= link_to 'Teachers index', teachers_path %></p>
+
+<p><%= link_to "[Edit]", edit_teacher_path(@teacher.id) %></p>
