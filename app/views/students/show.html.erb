@@ -1,12 +1,16 @@
 <h1><%= @student.name %></h1>
 
-<%= image_tag @student.image_url %>
+<%= image_tag @student.image_url%>
 <p>Age: <%= @student.age %></p>
 <p>Stress factor: <%= @student.stress_factor %></p>
 <p>Teacher: <%= @student.teacher.name %></p>
 
-<%= link_to "Edit", edit_student_path(@student.id) %>
+<hr>
+<br>
 
-<%= link_to "Delete", student_path(@student.id), method: :delete, data: { confirm: "Are you sure?"} %>
 
-<%= link_to "All students", students_path %>
+<%= link_to "Edit Student", edit_student_path(@student.id), class: "links" %>
+
+<%= link_to "Delete Student", student_path(@student.id), method: :delete, data: { confirm: "Are you sure?"}, class: "links" %>
+
+<%= link_to "Back to Teachers", teachers_path, class:"links" %>
