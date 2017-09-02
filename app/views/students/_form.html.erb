@@ -1,0 +1,18 @@
+<%= form_for @student do |form_item| %>
+  <%= form_item.label :name %>
+  <%= form_item.text_field :name %>
+
+  <%= form_item.label :age %>
+  <%= form_item.number_field :age %>
+
+  <%= form_item.label :stress_factor %>
+  <%= form_item.number_field :stress_factor %>
+
+  <%= form_item.label :image_url %>
+  <%= form_item.text_field :image_url %>
+
+  <%= form_item.label :teacher_id %>
+  <%= form_item.collection_select(:teacher_id, Teacher.all, :id, :name) %>
+
+  <%= form_item.submit (@student.new_record? ? "Create" : "Update") %>
+<% end %>

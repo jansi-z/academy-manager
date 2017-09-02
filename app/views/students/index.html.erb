@@ -2,3 +2,4 @@
 <% @students.each do |student| %>
   <p><%= link_to student.name, student_path(student.id) %></p>
 <% end %>
+<%= link_to "Add new student", new_student_path %>
