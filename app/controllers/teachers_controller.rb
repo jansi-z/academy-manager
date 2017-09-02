@@ -1,4 +1,6 @@
 class TeachersController < ApplicationController
+
+
   def index
     @teachers = Teacher.all
   end
@@ -36,11 +38,18 @@ class TeachersController < ApplicationController
   end
 
   def destroy
+
     @teacher = Teacher.find(params[:id])
+
+    if !@teacher.students.empty?
+      flash[:error] = "Cannot delete a teacher with student"
+      redirect_to @teacher
+    else
 
     @teacher.destroy
 
     redirect_to teachers_path
+  end
   end
 
   private
