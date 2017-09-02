@@ -1,11 +1,27 @@
+<div class="show">
 
 <h1><%= @teacher.name %></h1>
-
+<hr>
 <p>age: <%= @teacher.age %></p>
 <p>stress level: <%= @teacher.stress_level %></p>
-<%= image_tag @teacher.image_url %>
+<hr>
 
-<p><%= link_to 'Teachers index', teachers_path %></p>
+<h2>Students of this teacher: </h2>
+<% @teacher.students.each do |student| %>
+  <p><%= link_to image_tag(student.image_url), student_path(student.id) %></p>
+  <p><%= link_to student.name, student_path(student.id) %></p>
+  <p> Amount of Stress for Teacher: <%= student.stress_factor %></p>
+<% end %>
 
-<p><%= link_to "[Edit]", edit_teacher_path(@teacher.id) %></p>
-<p><%= link_to "[Delete]", teacher_path(@teacher.id), method: :delete, data: { confirm: "Are you sure?"} %></p>
+
+<hr />
+<div class="flexbox-row">
+<p><%= link_to "Back to Teachers", teachers_path, class: "links" %></p>
+<br>
+
+<p><%= link_to "Edit Teacher", edit_teacher_path(@teacher.id), class: "links" %></p>
+<br>
+<p><%= link_to "Delete Teacher", teacher_path(@teacher.id), method: :delete, data: { confirm: "Are you sure? Note: You can only delete a teacher if there are no students attached to the teacher."}, class: "links" %></p>
+</div>
+
+</div>

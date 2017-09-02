@@ -1,9 +1,17 @@
-<h1>Teachers</h1>
-
-
+<div class="index">
+  
+<h1>Welcome to the Academy!</h1>
+<h2 class="flexbox-center">Here are the teachers:</h2>
 
 <% @teachers.each do |teacher| %>
-  <p><%= link_to teacher.name, teacher_path(teacher.id) %></p>
+  <div class="flexbox-row">
+    <p><%= link_to image_tag(teacher.image_url, class: "small-images"), teacher_path(teacher.id) %></p>
+    <p><%= link_to teacher.name, teacher_path(teacher.id) %></p>
+    <p>Has <%= teacher.students.count  %> student(s)</p>
+
+</div>
+    <hr>
 <% end %>
 
-<p><%= link_to "New teacher", new_teacher_path %></p>
+  <p><%= link_to "New teacher", new_teacher_path, class: "links" %></p>
+</div>
