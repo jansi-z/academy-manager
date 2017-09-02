@@ -1,7 +1,8 @@
 <div class="index">
-
+  
 <h1>Welcome to the Academy!</h1>
 <h2 class="flexbox-center">Here are the teachers:</h2>
+
 <% @teachers.each do |teacher| %>
   <div class="flexbox-row">
     <p><%= link_to image_tag(teacher.image_url, class: "small-images"), teacher_path(teacher.id) %></p>
