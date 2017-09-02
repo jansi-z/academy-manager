@@ -96,6 +96,11 @@
  a {
    text-decoration: none;
    color: black;
+
+ }
+
+ .flexbox-row a {
+      margin-right: 10px
  }
 
  .form {
