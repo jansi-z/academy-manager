@@ -1,0 +1,7 @@
+<h1><%= @student.name %></h1>
+
+<%= image_tag @student.image_url %>
+<p>Age: <%= @student.age %></p>
+<p>Stress factor: <%= @student.stress_factor %></p>
+<p>Teacher: <%= @student.teacher.name %></p>
+<%= link_to "All students", students_path %>
