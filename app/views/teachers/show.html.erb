@@ -1,0 +1,7 @@
+<h1><%= @teacher.name %></h1>
+
+<p>age: <%= @teacher.age %></p>
+<p>stress level: <%= @teacher.stress_level %></p>
+<%= image_tag @teacher.image_url %>
+
+<p><%= link_to 'Teachers index', teachers_path %></p>
