@@ -59,9 +59,7 @@ class StudentsController < ApplicationController
 
     @student.destroy
 
-
-
-    redirect_to students_path
+    redirect_to root_path
   end
 
 end
