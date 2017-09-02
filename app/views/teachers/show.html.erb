@@ -7,3 +7,4 @@
 <p><%= link_to 'Teachers index', teachers_path %></p>
 
 <p><%= link_to "[Edit]", edit_teacher_path(@teacher.id) %></p>
+<p><%= link_to "[Delete]", teacher_path(@teacher.id), method: :delete, data: { confirm: "Are you sure?"} %></p>
