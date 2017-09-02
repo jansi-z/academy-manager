@@ -4,4 +4,7 @@
 <p>Age: <%= @student.age %></p>
 <p>Stress factor: <%= @student.stress_factor %></p>
 <p>Teacher: <%= @student.teacher.name %></p>
+
+<%= link_to "Edit", edit_student_path(@student.id) %>
+
 <%= link_to "All students", students_path %>
