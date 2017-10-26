@@ -46,10 +46,10 @@ class TeachersController < ApplicationController
       redirect_to @teacher
     else
 
-    @teacher.destroy
+      @teacher.destroy
 
-    redirect_to teachers_path
-  end
+      redirect_to teachers_path
+    end
   end
 
   private

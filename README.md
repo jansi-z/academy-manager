@@ -1,24 +1,19 @@
-# README
+## About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails project put together on a bootcamp hackathon. Our idea was to build a simple app that helps teachers manage their students. It's fairly rudimental, but it worked - and at the end of the day got us the hackathon win.
 
-Things you may want to cover:
+During this project we learned to set up our very own application from 0 to MVP, as well as work as a team.
 
-* Ruby version
+## Running the application
 
-* System dependencies
+Should be fairly straightforward:
 
-* Configuration
+1. Clone or download the repo
 
-* Database creation
+2. Run bundle install
 
-* Database initialization
+3. Run rails db:migrate
 
-* How to run the test suite
+4. Run rails server
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. Browse to http://localhost:3000 
